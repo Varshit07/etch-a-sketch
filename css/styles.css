@@ -6,13 +6,63 @@ html {
     box-sizing: border-box;
 }
 
+.title-of-the-page {
+    text-align: center;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: #ede0ab;
+}
+
 canvas {
-      border: 30px solid #ff0000;
+      border: 45px solid #ff0000;
       border-radius: 10px;
-      width: 900px;
+      display: block;
+      margin: auto;
+      width: 100%;
       height: 600px;
       background: #ffffff;
-      box-shadow: 3px 3px 8px #999999, 3px 3px 8px inset #999999;
+      box-shadow: 5px 5px 10px #999999, 5px 5px 10px inset #999999;
+}
+
+.canvas-container {
+    margin: 10px auto;
+    width: 900px;
+    /* text-align: center; */
+}
+
+.instructions {
+    text-align: center;
+}
+
+.interactions {
+    margin-top: 15px;
+}
+.button {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    background: #4040f7;
+    color: #FFFFFF;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+
+.button:hover {
+    box-shadow: 0px 4px 8px #999999;
+}
+
+a {
+    text-decoration: none;
+    text-align: right;
+    color: blue;
+    float: right;
 }
 
 
