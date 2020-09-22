@@ -60,5 +60,9 @@ a {
     float: right;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 
 
