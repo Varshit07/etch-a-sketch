@@ -10,6 +10,10 @@ let x = Math.floor((Math.random() * width));
 let y = Math.floor((Math.random() * height));
 console.log(`x = ${x}, y = ${y}`);
 
+let hue = 0;
+ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+
+
 ctx.lineJoin = `round`;
 ctx.lineCap = `round`;
 ctx.lineWidth = 20;
@@ -30,6 +34,8 @@ function handleKeyDown(event) {
 
 function draw({key}) {
     console.log(`In draw key = ${key}`);
+    
+    ctx.strokeStyle = `hsl(${hue += 4}, 100%, 50%)`;
     ctx.beginPath();
     ctx.moveTo(x, y);
     if(key === `ArrowUp`) {
