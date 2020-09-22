@@ -18,8 +18,6 @@ body {
 canvas {
       border: 40px solid #ff0000;
       border-radius: 10px;
-      display: block;
-      margin: auto;
       width: 100%;
       height: 500px;
       background: #ffffff;
@@ -29,12 +27,10 @@ canvas {
 .canvas-container {
     margin: 5px auto;
     width: 900px;
-    /* text-align: center; */
 }
 
 .instructions {
     text-align: center;
-    margin-top: 0;
 }
 
 .interactions {
@@ -50,8 +46,7 @@ canvas {
     border: 0;
     outline: none;
     border-radius: 5px;
-    cursor: pointer;
-    
+    cursor: pointer;   
 }
 
 
@@ -61,7 +56,6 @@ canvas {
 
 a {
     text-decoration: none;
-    text-align: right;
     color: blue;
     float: right;
 }

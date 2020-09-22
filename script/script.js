@@ -36,7 +36,7 @@ function handleKeyDown(event) {
 function draw({key}) {
     // console.log(`In draw key = ${key}`);
     
-    ctx.strokeStyle = `hsl(${hue += 5}, 100%, 50%)`;
+    ctx.strokeStyle = `hsl(${hue += 10}, 100%, 50%)`;
     
     ctx.beginPath();
     ctx.moveTo(x, y);
@@ -76,8 +76,10 @@ function clearCanvas() {
 function downloadImage() {
     document.querySelector(`.download`).setAttribute('download', 'My_Etch_A_Sketch.png');
     document.querySelector(`.download`).setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
-    link.click();
 }
+
+
+
 window.addEventListener(`keydown`, handleKeyDown);
 document.querySelector(`.reset`).addEventListener(`click`, clearCanvas);
 document.querySelector(`.download`).addEventListener(`click`, downloadImage);
