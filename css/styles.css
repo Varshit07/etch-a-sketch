@@ -1,0 +1,19 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+canvas {
+      border: 30px solid #ff0000;
+      border-radius: 10px;
+      width: 900px;
+      height: 600px;
+      background: #ffffff;
+      box-shadow: 3px 3px 8px #999999, 3px 3px 8px inset #999999;
+}
+
+
+
