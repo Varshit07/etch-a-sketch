@@ -1,14 +1,14 @@
 const canvas = document.querySelector('canvas');
 const MOVE_STEP = 20;
-// console.log(canvas);
+
 const ctx = canvas.getContext(`2d`);
-// console.log(ctx);
+
 const {width, height} = canvas;
 console.log(`${width} ${height}`);
 
 let x = Math.floor((Math.random() * width));
 let y = Math.floor((Math.random() * height));
-// console.log(`x = ${x}, y = ${y}`);
+
 
 let hue = 0;
 ctx.fillStyle = "#FFFFFF";
@@ -25,10 +25,10 @@ ctx.lineTo(x,y);
 ctx.stroke();
 
 function handleKeyDown(event) {
-    // console.log(event.key);
+    
     if(event.key.includes(`Arrow`)) {
         event.preventDefault();
-        // console.log(`Arrow key pressed ${event.key}`);
+
         draw({key: event.key});
     }
 }
@@ -41,16 +41,16 @@ function draw({key}) {
     ctx.beginPath();
     ctx.moveTo(x, y);
     if(key === `ArrowUp`) {
-        y -= ((y >= 0) ? MOVE_STEP : 0);
+        y -= ((y - MOVE_STEP >= 0) ? MOVE_STEP : 0);
     }
     else if(key === `ArrowDown`) {
-        y += ((y <= height) ? MOVE_STEP : 0);
+        y += ((y + MOVE_STEP <= height) ? MOVE_STEP : 0);
     }
     else if(key === `ArrowRight`) {
-        x += ((x <= width) ? MOVE_STEP: 0);
+        x += ((x + MOVE_STEP <= width) ? MOVE_STEP: 0);
     }
     else if(key === `ArrowLeft`) {
-        x -= ((x >= 0) ? MOVE_STEP: 0);
+        x -= ((x - MOVE_STEP >= 0) ? MOVE_STEP: 0);
     }
 
     
@@ -58,7 +58,6 @@ function draw({key}) {
     ctx.lineTo(x,y);
     ctx.stroke();
 
-    // console.log(`x = ${x}, y = ${y}`);
 }
 
 
