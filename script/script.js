@@ -11,7 +11,7 @@ let y = Math.floor((Math.random() * height));
 // console.log(`x = ${x}, y = ${y}`);
 
 let hue = 0;
-ctx.fillStyle = "#ffffff";
+ctx.fillStyle = "#FFFFFF";
 ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
 
 
@@ -37,6 +37,7 @@ function draw({key}) {
     console.log(`In draw key = ${key}`);
     console.log(`In draw x = ${x}, y = ${y}`);
 
+    ctx.fillStyle = "#FFFFFF";
     ctx.strokeStyle = `hsl(${hue += 10}, 100%, 50%)`;
     
     ctx.beginPath();
@@ -75,8 +76,16 @@ function clearCanvas() {
 }
 
 function downloadImage() {
-    document.querySelector(`.download`).setAttribute('download', 'My_Etch_A_Sketch.png');
-    document.querySelector(`.download`).setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+  
+    ctx.globalCompositeOperation = 'destination-over';
+
+    ctx.fillStyle = 'white';
+
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    document.querySelector(`.download`).setAttribute('download', 'My_Etch_A_Sketch.jpeg');
+    
+    document.querySelector(`.download`).setAttribute('href', canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream"));
 }
 
 
