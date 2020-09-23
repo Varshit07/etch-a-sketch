@@ -34,23 +34,24 @@ function handleKeyDown(event) {
 }
 
 function draw({key}) {
-    // console.log(`In draw key = ${key}`);
-    
+    console.log(`In draw key = ${key}`);
+    console.log(`In draw x = ${x}, y = ${y}`);
+
     ctx.strokeStyle = `hsl(${hue += 10}, 100%, 50%)`;
     
     ctx.beginPath();
     ctx.moveTo(x, y);
     if(key === `ArrowUp`) {
-        y -= (( x <= width && x >= 0 && y >= 0) ? MOVE_STEP : 0);
+        y -= ((y >= 0) ? MOVE_STEP : 0);
     }
     else if(key === `ArrowDown`) {
-        y += (( x <= width && x >= 0 && y <= height) ? MOVE_STEP : 0);
+        y += ((y <= height) ? MOVE_STEP : 0);
     }
     else if(key === `ArrowRight`) {
-        x += ((y >= 0 && y <= height && x <= width) ? MOVE_STEP: 0);
+        x += ((x <= width) ? MOVE_STEP: 0);
     }
     else if(key === `ArrowLeft`) {
-        x -= ((y >= 0 && y <= height && x >= 0) ? MOVE_STEP: 0);
+        x -= ((x >= 0) ? MOVE_STEP: 0);
     }
 
     
